@@ -1,0 +1,43 @@
+Options -Indexes
+
+RewriteEngine On
+
+
+
+# Controller
+
+RewriteRule ^regulator$ controller/insertions_controller/Insert.Controller.php [L]
+
+
+#TailWind
+RewriteRule ^tail$ public/css/app.css[L]
+
+
+
+#Config 
+RewriteRule ^configure$ config/db.php [L]
+
+
+# Ticket
+RewriteRule ^dash$ dashboard.php [L]
+
+# View 
+RewriteRule ^services$ view/division_department.php [L]
+RewriteRule ^services_view$ view/display_division_department.php [L]
+RewriteRule ^assets$ view/assets_page.php [L]
+RewriteRule ^dashboard$ view/organization.php [L]
+RewriteRule ^scan$ view/scan_qr.php [L]
+
+
+
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
+
+
+
+
+ErrorDocument 404 /tailwind/404.php
