@@ -1,4 +1,4 @@
 <?php
 
 
-header("Location: dashboard");
+header("Location: ./view/dashboard.php");
